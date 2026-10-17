@@ -1,0 +1,35 @@
+{
+  "input": {
+    "tagName": "input",
+    "attributes": {
+      "type": "search",
+      "placeholder": "Search...",
+      "class": "form-control",
+      "id": "searchInputId"
+    }
+  },
+  "label": {
+    "tagName": "label",
+    "textContent": "Search:",
+    "attributes": {
+      "class": "form-label mb-0 text-nowrap fw-semibold",
+      "for": "searchInputId"
+    }
+  },
+  "button": {
+    "tagName": "button",
+    "textContent": "Search",
+    "attributes": {
+      "type": "button",
+      "class": "btn btn-primary text-nowrap",
+      "id": "searchButtonId"
+    }
+  },
+  "rowWrapper": {
+    "tagName": "div",
+    "attributes": {
+      "class": "d-flex align-items-center gap-2"
+    },
+    "children": []
+  }
+}
