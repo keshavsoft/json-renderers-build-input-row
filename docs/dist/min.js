@@ -1,117 +1,114 @@
-const h = {
-  version: "1.1.0",
+const u = {
+  version: "1.2.0",
   name: "json-renderers-build-input-row"
-}, y = (r) => {
-  const t = r;
-  if (typeof globalThis > "u" || !t) return;
+}, b = (a) => {
+  const s = a;
+  if (typeof globalThis > "u" || !s) return;
   globalThis.ks ?? (globalThis.ks = {});
-  const e = typeof t == "function" ? t : t.render;
+  const t = typeof s == "function" ? s : s.render;
   globalThis.ks.jsonRenderersBuildInputRow = {
-    meta: h,
-    render: e,
-    ...typeof t == "object" ? t : {}
+    meta: u,
+    render: t,
+    ...typeof s == "object" ? s : {}
   };
-}, c = [
-  "input",
-  "inputOnly",
-  "inputWithLabel",
-  "inputWithLabelButton"
-], w = ({ inConfig: r } = {}) => {
-  const t = r;
-  if (!t || typeof t != "object")
-    throw console.error("Config must be an object"), new TypeError("Config must be an object");
-  if (t.type && (typeof t.type != "string" || !c.includes(t.type)))
-    throw console.error(`type must be one of: ${c.join(", ")}`), new Error(`type must be one of: ${c.join(", ")}`);
-  if (t.options && typeof t.options != "object")
-    throw console.error("options must be an object"), new TypeError("options must be an object");
-  return !0;
-}, C = {
-  tagName: "input",
-  attributes: {
-    type: "search",
-    placeholder: "Search...",
-    class: "form-control",
-    id: "searchInputId"
-  }
-}, m = {
-  tagName: "label",
-  textContent: "Search:",
-  attributes: {
-    class: "form-label mb-0 text-nowrap fw-semibold",
-    for: "searchInputId"
-  }
-}, g = {
-  tagName: "button",
-  textContent: "Search",
-  attributes: {
-    type: "button",
-    class: "btn btn-primary text-nowrap",
-    id: "searchButtonId"
-  }
-}, W = {
-  tagName: "div",
-  attributes: {
-    class: "d-flex align-items-center gap-2"
+}, p = "input", d = {
+  type: "search",
+  placeholder: "Search...",
+  class: "form-control",
+  id: "searchInputId"
+}, h = {
+  tagName: p,
+  attributes: d
+}, i = ({ inOptions: a = {}, options: s = {} } = {}) => {
+  const t = a && Object.keys(a).length > 0 ? a : s, e = structuredClone(h);
+  return t.placeholder && (e.attributes.placeholder = t.placeholder), t.class && (e.attributes.class = t.class), t.id && (e.attributes.id = t.id), t.name && (e.attributes.name = t.name), t.type && (e.attributes.type = t.type), t.value && (e.attributes.value = t.value), e;
+}, f = "div", m = {
+  class: "d-flex align-items-center gap-2"
+}, y = [
+  {
+    tagName: "label",
+    textContent: "Search:",
+    attributes: {
+      class: "form-label mb-0 text-nowrap fw-semibold",
+      for: "searchInputId"
+    }
   },
-  children: []
-}, u = {
-  input: C,
-  label: m,
-  button: g,
-  rowWrapper: W
-}, i = ({ inOptions: r = {} } = {}) => {
-  const t = r, e = structuredClone(u.input);
-  return t != null && t.placeholder && (e.attributes.placeholder = t.placeholder), t != null && t.class && (e.attributes.class = t.class), t != null && t.id && (e.attributes.id = t.id), t != null && t.name && (e.attributes.name = t.name), t != null && t.type && (e.attributes.type = t.type), t != null && t.value && (e.attributes.value = t.value), e;
-}, l = ({ inOptions: r = {} } = {}) => {
-  const t = r, e = structuredClone(u.rowWrapper), n = structuredClone(u.label), s = (t == null ? void 0 : t.id) ?? u.input.attributes.id;
-  t != null && t.wrapperClass && (e.attributes.class = t.wrapperClass), t != null && t.label && (n.textContent = t.label), t != null && t.labelClass && (n.attributes.class = t.labelClass), n.attributes.for = s;
-  const o = i({
-    inOptions: {
-      ...t,
-      id: s
+  {
+    tagName: "input",
+    attributes: {
+      type: "search",
+      placeholder: "Search...",
+      class: "form-control",
+      id: "searchInputId"
     }
-  });
-  return e.children = [n, o], e;
-}, f = ({ inOptions: r = {} } = {}) => {
-  const t = r, e = structuredClone(u.rowWrapper), n = structuredClone(u.label), s = structuredClone(u.button), o = (t == null ? void 0 : t.id) ?? u.input.attributes.id, a = (t == null ? void 0 : t.buttonId) ?? u.button.attributes.id;
-  t != null && t.wrapperClass && (e.attributes.class = t.wrapperClass), t != null && t.label && (n.textContent = t.label), t != null && t.labelClass && (n.attributes.class = t.labelClass), n.attributes.for = o;
-  const b = i({
-    inOptions: {
-      ...t,
-      id: o
+  }
+], g = {
+  tagName: f,
+  attributes: m,
+  children: y
+}, c = ({ inOptions: a = {}, options: s = {} } = {}) => {
+  const t = a && Object.keys(a).length > 0 ? a : s, e = structuredClone(g), n = e.children[0], l = e.children[1];
+  return t.label && (n.textContent = t.label), t.id && (n.attributes.for = t.id, l.attributes.id = t.id), t.placeholder && (l.attributes.placeholder = t.placeholder), t.class && (l.attributes.class = t.class), t.name && (l.attributes.name = t.name), t.type && (l.attributes.type = t.type), t.wrapperClass && (e.attributes.class = t.wrapperClass), t.labelClass && (n.attributes.class = t.labelClass), e;
+}, C = "div", x = {
+  class: "d-flex align-items-center gap-2"
+}, I = [
+  {
+    tagName: "label",
+    textContent: "Search:",
+    attributes: {
+      class: "form-label mb-0 text-nowrap fw-semibold",
+      for: "searchInputId"
     }
-  });
-  return t != null && t.buttonText && (s.textContent = t.buttonText), t != null && t.buttonClass && (s.attributes.class = t.buttonClass), t != null && t.buttonType && (s.attributes.type = t.buttonType), s.attributes.id = a, e.children = [n, b, s], e;
-}, j = {
+  },
+  {
+    tagName: "input",
+    attributes: {
+      type: "search",
+      placeholder: "Search...",
+      class: "form-control",
+      id: "searchInputId"
+    }
+  },
+  {
+    tagName: "button",
+    textContent: "Search",
+    attributes: {
+      type: "button",
+      class: "btn btn-primary text-nowrap",
+      id: "searchButtonId"
+    }
+  }
+], N = {
+  tagName: C,
+  attributes: x,
+  children: I
+}, o = ({ inOptions: a = {}, options: s = {} } = {}) => {
+  const t = a && Object.keys(a).length > 0 ? a : s, e = structuredClone(N), n = e.children[0], l = e.children[1], r = e.children[2];
+  return t.label && (n.textContent = t.label), t.id && (n.attributes.for = t.id, l.attributes.id = t.id), t.placeholder && (l.attributes.placeholder = t.placeholder), t.class && (l.attributes.class = t.class), t.name && (l.attributes.name = t.name), t.type && (l.attributes.type = t.type), t.buttonText && (r.textContent = t.buttonText), t.buttonClass && (r.attributes.class = t.buttonClass), t.buttonId && (r.attributes.id = t.buttonId), t.wrapperClass && (e.attributes.class = t.wrapperClass), t.labelClass && (n.attributes.class = t.labelClass), e;
+}, w = {
   input: i,
   inputOnly: i,
-  inputWithLabel: l,
-  inputWithLabelButton: f
-}, S = ({
-  type: r = "inputWithLabel",
-  options: t = {},
-  inType: e,
-  inOptions: n,
-  showLog: s = !1
+  inputWithLabel: c,
+  inputWithLabelButton: o
+}, $ = ({
+  type: a = "inputWithLabel",
+  options: s = {},
+  inType: t,
+  inOptions: e
 } = {}) => {
-  const o = e ?? r, a = n ?? t, b = s;
-  w({ inConfig: { type: o, options: a } });
-  const p = j[o];
-  if (!p)
-    throw new Error(`Flavour for type "${o}" not found.`);
-  const d = p({ inOptions: a });
-  return b && console.log("json-renderers-build-input-row output:", d), d;
+  const n = t ?? a, l = e ?? s;
+  return (w[n] || c)({ inOptions: l, options: l });
 };
-y({
-  render: S,
+b({
+  render: $,
   inputOnly: i,
-  inputWithLabel: l,
-  inputWithLabelButton: f
+  inputWithLabel: c,
+  inputWithLabelButton: o
 });
 export {
-  S as default,
+  $ as default,
   i as inputOnly,
-  l as inputWithLabel,
-  f as inputWithLabelButton,
-  S as render
+  c as inputWithLabel,
+  o as inputWithLabelButton,
+  $ as render
 };
