@@ -1,6 +1,6 @@
 {
   "name": "json-renderers-build-input-row",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Focused input row specification builder with configurable input, label, and button flavours",
   "type": "module",
   "main": "src/index.js",
