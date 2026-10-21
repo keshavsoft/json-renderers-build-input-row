@@ -1,0 +1,9 @@
+{
+  "tagName": "input",
+  "attributes": {
+    "type": "search",
+    "placeholder": "Search...",
+    "class": "form-control",
+    "id": "searchInputId"
+  }
+}
